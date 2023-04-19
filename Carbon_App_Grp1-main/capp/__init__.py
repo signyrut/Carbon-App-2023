@@ -14,6 +14,10 @@ application.config['SECRET_KEY'] = '23b3436c2bd9f7ee888955a2611f160471f78097432f
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
 application.config['SQLALCHEMY_BINDS'] ={'transport': 'sqlite:///transport.db'}
 
+DBVAR = 'postgresql://username:password@endpoint:5432//ebdb'
+application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
+application.config['SQLALCHEMY_BINDS'] ={'transport': DBVAR}
+
 db = SQLAlchemy(application)
 
 bcrypt = Bcrypt(application)
